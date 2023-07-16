@@ -1,0 +1,12 @@
+@media only screen and (min-width: 0px) and (max-width: 500px)  {
+    .profile_wrapper{
+        width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 1920px)  {
+    .profile_wrapper{
+     padding: 25%;
+     padding-top: 0%;
+    }
+  }
