@@ -415,4 +415,27 @@ display: none;
     font-weight:bold;
 animation: changerColor 1000ms infinite;
 }
+.time,.timing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #b6158e;
+}
+.Intop{
+    width: 80px;
+    height: 60px;
+    background-color: #1cda0b;
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(252, 252, 252, 0.897);
+    border-radius: 10px;
 
+}

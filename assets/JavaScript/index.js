@@ -1,5 +1,9 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+const BtnIntop = $(".Intop")
+const TimeWrapper = $(".time");
+const Timing = $(".timing");
+const Warning = $(".warning");
 const deviceUser = $('.deviceUser');
 const producerBrowser = $(".producer_device");
 const ListSong = $(".Song_List");
@@ -296,9 +300,86 @@ const app = {
 
 
 
-        // chay ham
+//    run function
         checkDevice();
+
+//  tải thời gian hiện tại 
+
+
     },
+
+    CurrentDate: function() {
+        var c = 0;
+        var dates;
+        var today = new Date();
+        for (i=0;i<=6;i++) {
+            if(today.getDay() == i && today.getDay() != 0){
+                dates = "Thứ"+i+1;
+            }
+            else {
+                if(today.getDay() == 0){
+                    dates = "Chủ Nhật"
+                }
+            }
+        }
+        var date =+today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+        var hour = c+today.getHours()+'-'+c+today.getMinutes()+'-'+today.getSeconds();
+      
+        const timeupdate  = (date,hour) => {
+            TimeWrapper.innerHTML = "Hôm nay là ngày"+ " "+date+" "+dates;
+        }
+        const Timingauto = () => {
+            Timing.innerHTML = hour;
+        }
+       setTimeout(Timingauto(),1000);
+
+timeupdate(date,hour);
+        if(today.getHours&&today.getMinutes&&today.getSeconds() <= 9) {
+            c=0
+        }
+        else {
+            c=c+1;
+        }
+    },
+     clock: function(){
+        //Khởi tạo đối tượng timer sử dụng Date Object
+        var timer = new Date();
+        //Gọi các phương thức của đối tượng timer
+        var hour = timer.getHours();  //Lấy giờ hiện tại (giá trị từ 0 - 23)
+        var minute = timer.getMinutes();  //Lấy phút hiện tại
+        var second = timer.getSeconds();  //Lấy giây  hiện tại
+        //Thêm ký tự 0 đằng trước nếu giờ, phút, giây < 10 với câu lệnh điều khiển if
+        if(hour < 10) {
+            hour = "0" + hour;
+        }
+        if(minute < 10) {
+            minute = "0" + minute;
+        }
+        if(second < 10) {
+            second = "0" + second;
+        }
+        if(hour>=9) {
+            Warning.innerHTML = "Cảnh báo quá giờ làm việc, xin vui lòng nghỉ ngơi"
+        }
+        //Hiện thị thời gian lên thẻ div id="clock" với phương thức innerHTML
+        Timing.innerHTML = hour + ":" + minute + ":" + second;
+     },
+     //Thực hiện hàm clock theo chu kỳ 1 giây
+     handleEventMore : function(){
+      document.onscroll = function (){
+        var scrollValue = window.scrollY;
+        if(scrollValue >= 600) {
+            BtnIntop.style.display = "flex";
+            BtnIntop.onclick = function(){
+               window.scrollTo(0,0)
+            }
+        }
+        else {
+            BtnIntop.style.display = "none";
+        }
+      }
+     },
+
     // Khởi chạy ứng dụng
     start: function () {
         app.GetcurrentSong(index);
@@ -307,6 +388,11 @@ const app = {
         app.HandleEvent();
         app.checkDevices();
         app.HandleUI();
+        app.CurrentDate();
+        app.handleEventMore();
+   setInterval(() => {
+    this.clock();
+   }, 1000);
     }
 };
 app.start();
