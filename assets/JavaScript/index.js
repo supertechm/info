@@ -1,6 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-const BtnIntop = $(".Intop")
+const BtnIntop = $(".Intop");
+const PostWrapper = $(".flex-text.Post");
 const TimeWrapper = $(".time");
 const Timing = $(".timing");
 const Warning = $(".warning");
@@ -380,6 +381,18 @@ timeupdate(date,hour);
       }
      },
 
+     getPost: async function(){
+       const UrlBackend = "http://127.0.0.1:3001/post";
+       fetch(UrlBackend).then(Post=> {
+        Post.json()
+       })
+
+       
+
+       
+    //    ge;tData()
+     },
+
     // Khởi chạy ứng dụng
     start: function () {
         app.GetcurrentSong(index);
@@ -390,6 +403,7 @@ timeupdate(date,hour);
         app.HandleUI();
         app.CurrentDate();
         app.handleEventMore();
+        app.getPost();
    setInterval(() => {
     this.clock();
    }, 1000);
