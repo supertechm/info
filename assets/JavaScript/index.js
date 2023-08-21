@@ -81,9 +81,13 @@ const app = {
         })
         ListSong.innerHTML = SongList.join();
         const PLaySong = $$(".PlaySong");
+
         PLaySong.forEach((btn, index) => {
             // khi click play
             btn.onclick = function () {
+               
+                    alert("Bạn đang nghe bài hát"+ " "+ app.GetcurrentSong(index).name);
+            
                 app.currentIndex = index;
                 app.GetcurrentSong(index);
                 app.LoadingCurrrentSong(index);
