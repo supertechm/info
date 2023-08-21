@@ -364,8 +364,12 @@ timeupdate(date,hour);
         if(second < 10) {
             second = "0" + second;
         }
-        if(hour>=9) {
-            Warning.innerHTML = "Cảnh báo quá giờ làm việc, xin vui lòng nghỉ ngơi"
+        if(hour>=22) {
+            Warning.innerHTML = "Cảnh báo quá giờ làm việc, xin vui lòng nghỉ ngơi";
+            Warning.style.color = "red";
+            Warning.style.display = "flex";
+            Warning.style.justifyContent = "center";
+            Warning.style.fontSize = "20px"
         }
         //Hiện thị thời gian lên thẻ div id="clock" với phương thức innerHTML
         Timing.innerHTML = hour + ":" + minute + ":" + second;
