@@ -314,7 +314,8 @@ const app = {
         var today = new Date();
         for (i=0;i<=6;i++) {
             if(today.getDay() == i && today.getDay() != 0){
-                dates = "Thứ"+i+1;
+                i=i+1;
+                dates = "Thứ"+ " "+i;
             }
             else {
                 if(today.getDay() == 0){
