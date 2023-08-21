@@ -315,7 +315,8 @@ const app = {
         var today = new Date();
         for (i=0;i<=6;i++) {
             if(today.getDay() == i && today.getDay() != 0){
-                dates = "Thứ"+i+1;
+                th_day=today.getDay()+1;
+                dates = "Thứ"+" "+th_day
             }
             else {
                 if(today.getDay() == 0){
@@ -381,17 +382,7 @@ timeupdate(date,hour);
       }
      },
 
-     getPost: async function(){
-       const UrlBackend = "http://127.0.0.1:3001/post";
-       fetch(UrlBackend).then(Post=> {
-        Post.json()
-       })
-
-       
-
-       
-    //    ge;tData()
-     },
+  
 
     // Khởi chạy ứng dụng
     start: function () {
@@ -403,10 +394,12 @@ timeupdate(date,hour);
         app.HandleUI();
         app.CurrentDate();
         app.handleEventMore();
-        app.getPost();
-   setInterval(() => {
-    this.clock();
-   }, 1000);
+        // app.getPost();
+        setInterval(() => {
+            this.clock();
+           }, 1000);
     }
-};
+  
+}
+    
 app.start();
