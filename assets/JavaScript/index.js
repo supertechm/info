@@ -30,13 +30,23 @@ const app = {
         {
             name: 'Em Là Của Anh',
             singer: 'Hồ Quang Hiếu',
-            src: './assets/mp3/Emlacuaanh.mp3'
+            src: './assets/mp2/Emlacuaanh.mp3'
+        },
+        {
+            name: 'Chờ Ngày Mưa Tan',
+            singer: 'Noo Phước Thịnh',
+            src: './assets/mp3/chongaymuatan.mp3'
         },
 
         {
             name: 'Hồn Quê',
             singer: 'Hiền Thục',
             src: './assets/mp3/HonQue.mp3'
+        },
+        {
+            name: 'Yêu được không',
+            singer: 'Đức Phúc',
+            src: './assets/mp3/Yeuduockhong.mp3'
         },
 
         {
@@ -87,6 +97,7 @@ const app = {
             btn.onclick = function () {
                
                     alert("Bạn đang nghe bài hát"+ " "+ app.GetcurrentSong(index).name);
+
             
                 app.currentIndex = index;
                 app.GetcurrentSong(index);
@@ -138,6 +149,8 @@ const app = {
     // Play Nhạc
     SongPlay: function () {
         SongAudio.play();
+        // console.log(SongAudio.play().then());
+        // console.log(SongAudio.error.code);
 
     },
     // Dừng nhạc
