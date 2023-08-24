@@ -149,9 +149,6 @@ const app = {
     // Play Nhạc
     SongPlay: function () {
         SongAudio.play();
-        // console.log(SongAudio.play().then());
-        // console.log(SongAudio.error.code);
-
     },
     // Dừng nhạc
     SongPause: function () {

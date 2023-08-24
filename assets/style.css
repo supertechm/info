@@ -312,11 +312,10 @@ color:rebeccapurple;
 .Song_List{
     display:flex;
     flex-direction: column;
-
     width: 100%;
-    height: 99%;
-
+    height: 400px;
     margin-top: 30px;
+    overflow-y:scroll;
 }
 .Song_List .Song_wrapper{
     display: flex;
