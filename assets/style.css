@@ -4,7 +4,18 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+/* animation */
+@keyframes Downtoup {
+    from {
+  position: absolute;
+  bottom: 10px;
+    }
+    to {
+        position: absolute;
+        top: 5px;
+    }
+    
+}
 html{
      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 62.5%;
@@ -426,20 +437,23 @@ animation: changerColor 1000ms infinite;
     color: #b6158e;
 }
 .Intop{
-    width: 80px;
-    height: 60px;
-    background-color: #1cda0b;
-    position:fixed;
-    right: 0;
-    bottom: 0;
-    font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(252, 252, 252, 0.897);
-    border-radius: 10px;
-
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    position:fixed;
+    right: 0;
+    bottom: 0;
+}
+.Intop .fa.fa-arrow-up{
+    animation: Downtoup 3000ms ease-in infinite;
+    font-size: 20px;
+    color: rgb(161, 49, 49);
+    justify-content: center;
+    align-items: center;
 }
 /* style post */
 .flex-text.Post {
@@ -480,3 +494,4 @@ color: black;
     justify-content: center;
 
 }
+
