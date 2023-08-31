@@ -30,12 +30,12 @@ const app = {
         {
             name: 'Em Là Của Anh',
             singer: 'Hồ Quang Hiếu',
-            src: './assets/mp2/Emlacuaanh.mp3'
+            src: './assets/mp3/Emlacuaanh.mp3'
         },
         {
             name: 'Em Luôn Ở Trong Tâm Trí Anh',
             singer: 'Hồ Quang Hiếu',
-            src: './assets/mp2/emluontrongtamtrianh.mp3'
+            src: './assets/mp3/Eltrong.mp3'
         },
         {
             name: 'Chờ Ngày Mưa Tan',
