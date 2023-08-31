@@ -33,6 +33,11 @@ const app = {
             src: './assets/mp2/Emlacuaanh.mp3'
         },
         {
+            name: 'Em Luôn Ở Trong Tâm Trí Anh',
+            singer: 'Hồ Quang Hiếu',
+            src: './assets/mp2/emluontrongtamtrianh.mp3'
+        },
+        {
             name: 'Chờ Ngày Mưa Tan',
             singer: 'Noo Phước Thịnh',
             src: './assets/mp3/chongaymuatan.mp3'
