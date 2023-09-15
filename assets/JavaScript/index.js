@@ -23,6 +23,10 @@ const Lightbtn = $(".lightmode");
 const ProfileWrapper = $(".profile_wrapper");
 const previewInfo = $(".previewInfo");
 const wrapper = $("html");
+const Newsfeed = $(".newfeeds");
+const NewsfeedHeader = $(".Newsfeed_header");
+const NewsfeedContent = $(".newfeeds-content");
+const NewsfeedExit = $(".closetab");
 var index = 0;
 const app = {
     currentIndex: 0,
@@ -405,8 +409,11 @@ timeupdate(date,hour);
       }
      },
 
-  
-
+     newsfeedAcitve: function(){
+      NewsfeedExit.onclick = function(){
+        Newsfeed.classList.add("unactive");
+      }
+     },
     // Khởi chạy ứng dụng
     start: function () {
         app.GetcurrentSong(index);
@@ -421,6 +428,7 @@ timeupdate(date,hour);
         setInterval(() => {
             this.clock();
            }, 1000);
+          app.newsfeedAcitve();
     }
   
 }
