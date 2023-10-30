@@ -1,5 +1,8 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+const musicProfile = $(".musicProfile"); 
+const playProfile = $(".play-Profile");
+const pauseProfile = $('.pause-Profile');
 const BtnIntop = $(".Intop");
 const PostWrapper = $(".flex-text.Post");
 const TimeWrapper = $(".time");
@@ -373,7 +376,7 @@ timeupdate(date,hour);
         var hour = timer.getHours();  //Lấy giờ hiện tại (giá trị từ 0 - 23)
         var minute = timer.getMinutes();  //Lấy phút hiện tại
         var second = timer.getSeconds();  //Lấy giây  hiện tại
-        //Thêm ký tự 0 đằng trước nếu giờ, phút, giây < 10 với câu lệnh điều khiển if
+        //Thêm ký tự 0 đằng trước nếu giờ, phút, giây bé hơn 10 với câu lệnh điều khiển if
         if(hour < 10) {
             hour = "0" + hour;
         }
@@ -414,6 +417,14 @@ timeupdate(date,hour);
         Newsfeed.classList.add("unactive");
       }
      },
+     musicPlay: function(){
+        playProfile.onclick = function(){
+            musicProfile.src = './assets/mp3/profile.music.mp3.mp3';
+            musicProfile.play();
+            // playProfile.style.display = "none"; 
+            // pauseProfile.style.display = "flex";
+        }
+     },
     // Khởi chạy ứng dụng
     start: function () {
         app.GetcurrentSong(index);
@@ -424,6 +435,7 @@ timeupdate(date,hour);
         app.HandleUI();
         app.CurrentDate();
         app.handleEventMore();
+        app.musicPlay();
         // app.getPost();
         setInterval(() => {
             this.clock();
