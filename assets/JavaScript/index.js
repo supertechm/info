@@ -421,8 +421,12 @@ timeupdate(date,hour);
         playProfile.onclick = function(){
             musicProfile.src = './assets/mp3/profile.music.mp3.mp3';
             musicProfile.play();
+
             // playProfile.style.display = "none"; 
             // pauseProfile.style.display = "flex";
+        }
+        pauseProfile.onclick = function(){
+            musicProfile.pause();
         }
      },
     // Khởi chạy ứng dụng
